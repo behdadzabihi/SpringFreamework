@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <context:annotation-config/>
+    <context:component-scan base-package="com.spring.training"/>
+    <bean id="messageLogger" class="com.spring.training.aop.xml.MessageLogger"/>
+    <bean id="performer" class="com.spring.training.aop.xml.Performer"/>
+    <bean id="messageAround" class="com.spring.training.aop.xml.LogAroundAdviceMessage"/>
+    <bean id="messageAdvice" class="com.spring.training.aop.xml.MessageAdviceWithParamBinding"/>
+    <aop:config>
+        <aop:pointcut id="messagePointCut" expression="execution(* com.spring.training.aop.xml.Performer.*(..)) and args(name,number) "/>
+<!--        <aop:aspect id="messageAspect" ref="messageLogger">-->
+<!--            <aop:after method="log" pointcut-ref="messagePointCut"/>-->
+<!--        </aop:aspect>-->
+<!--        <aop:aspect id="messageAspect" ref="messageLogger">-->
+<!--            <aop:after-throwing method="log" pointcut-ref="messagePointCut" throwing="java.lang.RuntimeException"/>-->
+<!--        </aop:aspect>-->
+<!--        <aop:aspect id="logAroundMessage" ref="messageAround">-->
+<!--            <aop:around method="logAroundAdvice" pointcut-ref="messagePointCut"/>-->
+<!--        </aop:aspect>-->
+        <aop:aspect id="" ref="messageAdvice">
+            <aop:before method="log" arg-names="name,number" pointcut-ref="messagePointCut"/>
+        </aop:aspect>
+    </aop:config>
+</beans>
