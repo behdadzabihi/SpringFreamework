@@ -1,6 +1,6 @@
 //package com.spring.training.webservice.soap.client;
 //
-//import com.nikamooz.spring.session06.PaymentService;
+//import com.spring.webservice.soap.publish.PaymentService;
 //
 //import javax.xml.namespace.QName;
 //import javax.xml.ws.Service;
@@ -9,15 +9,10 @@
 //import java.net.MalformedURLException;
 //import java.net.URL;
 //
-///**
-// * @author Ahmad R. Seddighi (ahmadseddighi@yahoo.com)
-// * Date: 4/9/21
-// * Time: 11:12 AM
-// */
 //
 //@WebServiceClient(name = "PaymentServiceImpl",
 //        wsdlLocation = "http://localhost:9195/paymentService?wsdl",
-//        targetNamespace = "http://session06.spring.nikamooz.com/")
+//        targetNamespace = "http://training.spring.com/")
 //public class PaymentServiceImpl extends Service {
 //
 //    static URL WSDL_LOCATION = null;
@@ -30,8 +25,8 @@
 //        }
 //    }
 //
-//    public final static QName SERVICE = new QName("http://session06.spring.nikamooz.com/", "PaymentServiceService");
-//    public final static QName PaymentServiceImplPort = new QName("http://session06.spring.nikamooz.com/", "PaymentServicePort");
+//    public final static QName SERVICE = new QName("http://training.spring.com/", "PaymentServiceService");
+//    public final static QName PaymentServiceImplPort = new QName("http://training.spring.com/", "PaymentServicePort");
 //
 //    protected PaymentServiceImpl() {
 //        super(WSDL_LOCATION, SERVICE);

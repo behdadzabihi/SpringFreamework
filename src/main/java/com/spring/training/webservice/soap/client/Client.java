@@ -2,11 +2,6 @@
 //
 //
 //
-///**
-// * @author Ahmad R. Seddighi (ahmadseddighi@yahoo.com)
-// * Date: 4/9/21
-// * Time: 11:11 AM
-// */
 //
 //public class Client {
 //

@@ -10,11 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Logger;
 
-/**
- * @author Ahmad R. Seddighi (ahmadseddighi@yahoo.com)
- * Date: 4/16/21
- * Time: 10:01 AM
- */
+
 @RestController
 @RequestMapping(value = "/product", produces = "application/json")
 @Scope("session")

@@ -9,11 +9,6 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-/**
- * @author Ahmad R. Seddighi (ahmadseddighi@yahoo.com)
- * Date: 4/16/21
- * Time: 12:01 PM
- */
 @EnableWebMvc
 @Configuration
 @EnableSwagger2

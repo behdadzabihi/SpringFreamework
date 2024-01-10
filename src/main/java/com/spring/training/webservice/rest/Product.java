@@ -1,10 +1,6 @@
 package com.spring.training.webservice.rest;
 
-/**
- * @author Ahmad R. Seddighi (ahmadseddighi@yahoo.com)
- * Date: 4/16/21
- * Time: 10:38 AM
- */
+
 
 public class Product {
     Long id;

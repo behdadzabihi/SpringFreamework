@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bean:beans xmlns="http://www.springframework.org/schema/security"
+            xmlns:bean="http://www.springframework.org/schema/beans"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <http auto-config="true">
+        <csrf disabled="true"/>
+        <form-login login-page="/login.jsp" default-target-url="/home.jsp"/>
+        <intercept-url pattern="/login.jsp" access="isAnonymous()" />
+        <intercept-url pattern="/*" access="hasRole('ROLE_USER')" />
+    </http>
+
+
+
+    <bean:bean id="passwordEncoder" class="org.springframework.security.crypto.password.NoOpPasswordEncoder"/>
+<!--    <bean:bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>-->
+
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider user-service-ref="hibernateUserDetailsService"/>
+    </authentication-manager>
+
+    <bean:bean id="hibernateUserDetailsService" class="com.spring.training.security.sec.HibernateUserDetailsService"/>
+
+
+    <bean:bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <bean:property name="dataSource" ref="dataSource"/>
+        <bean:property name="packagesToScan" value="com.spring.training.security.entity"/>
+        <bean:property name="hibernateProperties">
+            <bean:props>
+                <bean:prop key="hibernate.hbm2ddl.auto">update</bean:prop>
+                <bean:prop key="hibernate.dialect">org.hibernate.dialect.PostgresPlusDialect</bean:prop>
+            </bean:props>
+        </bean:property>
+    </bean:bean>
+
+
+    <bean:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <bean:property name="url" value="jdbc:postgresql://localhost:5433/spsecurity"/>
+        <bean:property name="username" value="postgres"/>
+        <bean:property name="password" value="postgres"/>
+        <bean:property name="driverClassName" value="org.postgresql.Driver"/>
+    </bean:bean>
+
+
+
+</bean:beans>

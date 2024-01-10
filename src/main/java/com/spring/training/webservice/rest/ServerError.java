@@ -1,10 +1,6 @@
 package com.spring.training.webservice.rest;
 
-/**
- * @author Ahmad R. Seddighi (ahmadseddighi@yahoo.com)
- * Date: 4/16/21
- * Time: 11:53 AM
- */
+
 
 public class ServerError {
     public final static int IOEXCEPTION = 1;
