@@ -1,0 +1,39 @@
+1.create a new project for call payment service webservice
+2.add to pom.xml
+  <dependencies>
+        <dependency>
+            <groupId>org.springframework.ws</groupId>
+            <artifactId>spring-ws-core</artifactId>
+            <version>3.0.10.RELEASE</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <id>wsimport-from-jdk</id>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <wsdlUrls>
+                        <wsdlUrl>http://localhost:9195/paymentService?wsdl</wsdlUrl>
+                    </wsdlUrls>
+                    <!--                    <wsdlDirectory>${project.basedir}/src/main/resources</wsdlDirectory>-->
+                    <keep>true</keep>
+                    <packageName>com.example.ypurproject.gen</packageName>
+                    <sourceDestDir>src/main/java</sourceDestDir>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+3.create client and payment service impl class like this package for example
+4.clean and package in maven lifecycle to generate resource service code
