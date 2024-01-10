@@ -12,12 +12,6 @@
         <property name="hibernate.hbm2ddl.auto">create</property>
         <property name="hibernate.show_sql">true</property>
         <mapping class="com.spring.training.orm.hibernate.Message"/>
-        <mapping class="com.nikamooz.spring.session4.inheritance.tableperclass.Person"/>
-        <mapping class="com.nikamooz.spring.session4.inheritance.tableperclass.Teacher"/>
-        <mapping class="com.nikamooz.spring.session4.inheritance.tableperclass.Student"/>
-        <mapping class="com.nikamooz.spring.session4.inheritance.singletable.Student"/>
-        <mapping class="com.nikamooz.spring.session4.inheritance.singletable.Person"/>
-        <mapping class="com.nikamooz.spring.session4.inheritance.singletable.Teacher"/>
         <mapping class="com.spring.training.orm.hibernate.Manager"/>
     </session-factory>
 </hibernate-configuration>

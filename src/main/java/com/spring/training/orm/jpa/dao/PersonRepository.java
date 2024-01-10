@@ -2,7 +2,6 @@ package com.spring.training.orm.jpa.dao;
 
 import com.spring.training.orm.jpa.entity.Person;
 import com.spring.training.orm.jpa.model.SimplePerson;
-import com.spring.training.orm.jpa.service.PersonService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
